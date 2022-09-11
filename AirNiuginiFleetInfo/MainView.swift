@@ -77,7 +77,7 @@ struct MainView: View {
                                     NavigationLink(destination: DetailView(aircraft: myRow)) {
                                         
                                     }
-                                    //DestinationView(destinations: myRow.destinatinations)
+                                    
                                 }
                                 Text(myRow.manufacturer)
                                     .font(.subheadline)
@@ -112,16 +112,4 @@ struct MainView_Previews: PreviewProvider {
 }
 
 
-struct DestinationView: View {
-    
-    let destinations:[Destination]
-    
-    var body: some View {
-        
-        HStack{
-            ForEach(destinations, id: \.id){ dest in
-                Text(dest.name)
-            }
-        }
-    }
-}
+
