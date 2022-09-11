@@ -118,8 +118,7 @@ extension FleetInfo {
                 Rego(reg: "P2-PXV"),
                 Rego(reg: "P2-PXW")], length: "32.8m",
                       wingSpan: "28.4m", range: "3000km", cruiseSpeed: "670kph", powerPlant: [
-                        PowerPlant(name: "2 x Pratt & Whitney PW150A"),
-                        PowerPlant(name: "Pw4060")],
+                        PowerPlant(name: "2 x Pratt & Whitney PW150A")],
                       altitude: "7600m", totalSeat: 76, businessClass: 0, enonomyClass: 76, internationalDestinatinations: [InternationalDestination(name: "Popondetta"),
                                                                                                                                       InternationalDestination(name: "Tufi"),
                                                                                                                             InternationalDestination(name: "Kiunga"),

@@ -18,90 +18,103 @@ struct MainView: View {
     
     var body: some View {
         
-        NavigationView {
+//        TabView {
+//            .tabItem {
+//                Text("Text")
+//            }
+//        }
+        
             
-            ZStack {
-                Image("background")
-                    .resizable()
-                    .ignoresSafeArea()
+           
+        
+        
+            NavigationView {
                 
-                VStack {
-                    
-                    
-                    Image("px")
-                    
+                ZStack {
+                    Image("background")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(100)
-                        .frame(width: 100, height: 100, alignment: .leading)
-                        .opacity(0.4)
+                        .ignoresSafeArea()
                     
-                        .background(
-                            Circle()
-                                .stroke()
-                                .fill(.white)
-                                .frame(width: 110, height: 110)
-                        )
-                    
-                    Text("Fleet Information")
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
-                        .clipShape(Rectangle())
-                        .cornerRadius(50)
-                        .opacity(0.6)
-                        .padding(.top)
-                    
-                    
-                    List() {      //(self.fleet, id: \.id) { myRow in
+                    VStack {
                         
-                        ForEach (fleet) { myRow in
+                        
+                        Image("px")
+                        
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(100)
+                            .frame(width: 100, height: 100, alignment: .leading)
+                            .opacity(0.4)
+                        
+                            .background(
+                                Circle()
+                                    .stroke()
+                                    .fill(.white)
+                                    .frame(width: 110, height: 110)
+                            )
+                        
+                        Text("Fleet Information")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                            .clipShape(Rectangle())
+                            .cornerRadius(50)
+                            .opacity(0.6)
+                            .padding(.top)
+                        
+                        
+                        List() {      //(self.fleet, id: \.id) { myRow in
                             
-                            
-                            VStack(alignment: .leading) {
+                            ForEach (fleet) { myRow in
                                 
-                                HStack {
+                                
+                                VStack(alignment: .leading) {
                                     
-                                    Image(myRow.photo)
-                                    
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 50, height:  50)
-                                        .cornerRadius(50)
-                                    
-                                    Text(myRow.name)
-                                    //.background(.red)
-                                        .font(.subheadline)
-                                        .foregroundColor(.primary)
-                                        .padding()
-                                    //Text(myRow.series)
-                                    NavigationLink(destination: DetailView(aircraft: myRow)) {
+                                    HStack {
+                                        
+                                        Image(myRow.photo)
+                                        
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 50, height:  50)
+                                            .cornerRadius(50)
+                                        
+                                        Text(myRow.name)
+                                        //.background(.red)
+                                            .font(.subheadline)
+                                            .foregroundColor(.primary)
+                                            .padding()
+                                        //Text(myRow.series)
+                                        NavigationLink(destination: DetailView(aircraft: myRow)) {
+                                            
+                                        }
                                         
                                     }
+                                    Text(myRow.manufacturer)
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                        .padding(.top, -10)
+                                    // EngineView(engines: myRow.powerPlant)
+                                }
                                     
                                 }
-                                Text(myRow.manufacturer)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                                    .padding(.top, -20)
-                                // EngineView(engines: myRow.powerPlant)
-                                
+                           
                             }
-                        }
+                       
+                        Image(systemName: "info.circle.fill")
+                        
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+
+                    
                     }
                 }
+            
             }
-            
-            
-            Image(systemName: "info.circle.fill")
-            
-                .font(.largeTitle)
-                .foregroundColor(.white)
-            
+         
+           
         }
-        
+    
     }
-}
-
 
 
 

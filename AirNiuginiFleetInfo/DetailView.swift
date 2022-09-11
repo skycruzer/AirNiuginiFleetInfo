@@ -33,7 +33,7 @@ struct DetailView: View {
 //                    )
             
             
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .center, spacing: 5) {
                 Image(aircraft.photo)
                     .resizable()
                     .scaledToFit()
@@ -44,27 +44,28 @@ struct DetailView: View {
                     .fontWeight(.heavy)
                     .padding(.leading, 10)
                 
-                VStack(alignment: .leading, spacing: 3) {
-                   
-                    Text("Total: \(aircraft.fleet)")
-                    // Text(aircraft.rego)
-                    Text("Lenght: \(aircraft.length)")
-                    Text("Wing Span: \(aircraft.wingSpan)")
-                    Text("Range: \(aircraft.range)")
-                    Text("Cruise Speed: \(aircraft.cruiseSpeed)")
-                    
-                    HStack(){
-                        Text("Engines:")
-                        EngineView(engines: aircraft.powerPlant)
-                    }
-                    
-                    Text("Normal Cruising Altitude: \(aircraft.altitude) feet") 
-                    Text("Seating Capacity: \(aircraft.totalSeat)")
-                    Text("Business Class: \(aircraft.businessClass)")
-                    Text("Economy: \(aircraft.enonomyClass)")
+                VStack(alignment: .center, spacing: 3) {
+                    //RoundedRectangle(cornerRadius: 50)
+                        Text("Total: \(aircraft.fleet)")
+                        // Text(aircraft.rego)
+                        Text("Lenght: \(aircraft.length)")
+                        Text("Wing Span: \(aircraft.wingSpan)")
+                        Text("Range: \(aircraft.range)")
+                        Text("Cruise Speed: \(aircraft.cruiseSpeed)")
                         
+                        HStack(){
+                            Text("Engines:")
+                            EngineView(engines: aircraft.powerPlant)
+                        }
+                        
+                        Text("Cruising Altitude: \(aircraft.altitude) feet")
+                        Text("Seating Capacity: \(aircraft.totalSeat)")
+                        Text("Business Class: \(aircraft.businessClass)")
+                        Text("Economy: \(aircraft.enonomyClass)")
+                        
+                    
                 }
-                
+               
                 .font(.subheadline)
                 .padding(10)
                 
@@ -72,7 +73,8 @@ struct DetailView: View {
                   
                     //DestinationView(destinations:aircraft.internationalDestinatinations)
                     DestinationView(destinations: aircraft.internationalDestinatinations, engines: aircraft.powerPlant)
-    
+                        .padding()
+                        
                 }
                 
                Spacer()
@@ -120,7 +122,7 @@ struct DestinationView: View {
         VStack (){
             NavigationView() {
                 
-            List() {
+                List() {
                 
                // Section("International") {
 
