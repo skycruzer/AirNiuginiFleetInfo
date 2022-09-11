@@ -38,6 +38,7 @@ struct DetailView: View {
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(50)
+                    .opacity(0.4)
                 Text(aircraft.manufacturer)
                     .font(.title)
                     .underline()

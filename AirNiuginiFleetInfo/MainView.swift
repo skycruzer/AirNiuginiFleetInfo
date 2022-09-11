@@ -16,26 +16,21 @@ struct MainView: View {
     //.sorted { $0.name < $1.name }
     //let filteredNames = [String]()
     
+    
+    
+    
     var body: some View {
         
-//        TabView {
-//            .tabItem {
-//                Text("Text")
-//            }
-//        }
-        
-            
-           
-        
-        
+     
             NavigationView {
                 
                 ZStack {
                     Image("background")
                         .resizable()
                         .ignoresSafeArea()
-                    
-                    VStack {
+                        .opacity(0.9)
+                                 
+                VStack {
                         
                         
                         Image("px")
@@ -51,6 +46,7 @@ struct MainView: View {
                                     .stroke()
                                     .fill(.white)
                                     .frame(width: 110, height: 110)
+                                    
                             )
                         
                         Text("Fleet Information")
@@ -60,13 +56,13 @@ struct MainView: View {
                             .cornerRadius(50)
                             .opacity(0.6)
                             .padding(.top)
-                        
+                            .padding(.top, -20)
                         
                         List() {      //(self.fleet, id: \.id) { myRow in
                             
                             ForEach (fleet) { myRow in
                                 
-                                
+                                    
                                 VStack(alignment: .leading) {
                                     
                                     HStack {
@@ -110,6 +106,7 @@ struct MainView: View {
                 }
             
             }
+            //.padding(.top, 0)
          
            
         }
