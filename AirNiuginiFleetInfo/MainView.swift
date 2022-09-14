@@ -21,7 +21,8 @@ struct MainView: View {
     
     var body: some View {
         
-     
+        
+            
             NavigationView {
                 
                 ZStack {
@@ -30,7 +31,7 @@ struct MainView: View {
                         .ignoresSafeArea()
                         .opacity(0.9)
                                  
-                VStack {
+                    VStack {
                         
                         
                         Image("px")
@@ -46,7 +47,7 @@ struct MainView: View {
                                     .stroke()
                                     .fill(.white)
                                     .frame(width: 110, height: 110)
-                                    
+                                
                             )
                         
                         Text("Fleet Information")
@@ -55,14 +56,13 @@ struct MainView: View {
                             .clipShape(Rectangle())
                             .cornerRadius(50)
                             .opacity(0.6)
-                            .padding(.top)
-                            .padding(.top, -20)
+                            .padding(.top, -10)
                         
                         List() {      //(self.fleet, id: \.id) { myRow in
                             
                             ForEach (fleet) { myRow in
                                 
-                                    
+                                
                                 VStack(alignment: .leading) {
                                     
                                     HStack {
@@ -80,9 +80,7 @@ struct MainView: View {
                                             .foregroundColor(.primary)
                                             .padding()
                                         //Text(myRow.series)
-                                        NavigationLink(destination: DetailView(aircraft: myRow)) {
-                                            
-                                        }
+                                        
                                         
                                     }
                                     Text(myRow.manufacturer)
@@ -90,29 +88,28 @@ struct MainView: View {
                                         .foregroundColor(.secondary)
                                         .padding(.top, -10)
                                     // EngineView(engines: myRow.powerPlant)
+                                    NavigationLink(destination: DetailView(aircraft: myRow)) {
+                                        
+                                    }
                                 }
-                                    
-                                }
-                           
+                                
+                            }
+                            
                         }
                         .listItemTint(/*@START_MENU_TOKEN@*/.accentColor/*@END_MENU_TOKEN@*/)
-                       
+                        
                         Image(systemName: "info.circle.fill")
                         
                             .font(.largeTitle)
                             .foregroundColor(.white)
-
                     
+                        
+                        }
                     }
                 }
-            
             }
-            //.padding(.top, 0)
-         
-           
         }
     
-    }
 
 
 
