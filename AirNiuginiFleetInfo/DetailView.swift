@@ -121,10 +121,10 @@ struct DestinationView: View {
     var body: some View {
         
         VStack (){
-            NavigationView() {
+            
                 
-                List() {
-                
+            List() {
+               
                // Section("International") {
 
                     ForEach(self.destinations, id: \.id){ dest in
@@ -132,12 +132,12 @@ struct DestinationView: View {
                         HStack {
                             Image(systemName: "airplane")
                             Text(dest.name)
-                                .font(.subheadline)
+                                
                             //.multilineTextAlignment(.leading)
                         }
                        
                     }
-                    .navigationTitle("Destinations")
+                 
                 //}
                 
 //                Section("Domestic") {
@@ -150,10 +150,16 @@ struct DestinationView: View {
 //                            }
 //                    }
 //                }
-                
-                }
-            
+                    
+                    
+                    
             }
+            .listRowSeparator(/*@START_MENU_TOKEN@*/.hidden/*@END_MENU_TOKEN@*/)
+            .listStyle(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=List Style@*/DefaultListStyle()/*@END_MENU_TOKEN@*/)
+           
+            
+            
+           
             
         }
     }

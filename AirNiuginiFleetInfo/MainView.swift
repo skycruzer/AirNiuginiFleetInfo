@@ -94,7 +94,8 @@ struct MainView: View {
                                     
                                 }
                            
-                            }
+                        }
+                        .listItemTint(/*@START_MENU_TOKEN@*/.accentColor/*@END_MENU_TOKEN@*/)
                        
                         Image(systemName: "info.circle.fill")
                         
